@@ -309,13 +309,24 @@
     }
 
     function getTaxi() {
+      // if (!pickupDetails) {
+      //   alert('Please select valid pickup location.');
+      //   return;
+      // }
+
+      // if (!dropoffDetails) {
+      //   alert('Please select valid dropoff location.');
+      //   return;
+      // }
       let phoneNumber = $('#phoneNumber').val();
-      let approxDistance = $('#approxdistance').val() || 0;
+      let approxDistance = $('#approxdistance').val() || "";
       approxDistance = approxDistance.replace(' km', '');
       approxDistance = parseFloat(approxDistance);
 
+
+
       if (!pickupDetails.address || !dropoffDetails.address) {
-        alert('Please enter both pickup and dropoff locations.');
+        alert('Please select valid pickup and dropoff locations.');
         return;
       }
       if (!pickupDetails.lat || !dropoffDetails.lat) {
@@ -359,6 +370,12 @@
 
       // Show vehicle selection section
       $('.vehicle-section').show();
+      $('html, body').animate(
+        {
+          scrollTop: $('.vehicle-section').offset().top - 80
+        },
+        600
+      );
     }
 
     function selectVehicle(vehicletype, approxDistance) {
@@ -371,6 +388,12 @@
       $('.selected-vehicle-title').text(vehicle.type + ' - Rs. ' + (vehicle.price * approxDistance));
       // Show booking section
       $('.booking-section').show();
+      $('html, body').animate(
+        {
+          scrollTop: $('.booking-section').offset().top - 80
+        },
+        600
+      );
     }
 
     function generateTimeSlots(intervalMinutes = 30) {
