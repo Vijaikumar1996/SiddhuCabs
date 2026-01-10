@@ -1,0 +1,32 @@
+{
+    "appName": "Siddhu Cabs",
+    "mobileNo": "+919788404087",
+    "locationApi": "https://nominatim.openstreetmap.org/search",
+    "rightsReserved": "Siddhu Cabs",
+    "vehicleTypes": [
+        {
+            "type": "Sedan",
+            "description": "Comfort • Best for trips",
+            "perKmRate": "₹15 / KM",
+            "price": 15
+        },
+        {
+            "type": "Etios",
+            "description": "Budget • AC",
+            "perKmRate": "₹14 / KM",
+            "price": 14
+        },
+        {
+            "type": "SUV",
+            "description": "Spacious • Comfortable",
+            "perKmRate": "₹18 / KM",
+            "price": 18
+        },
+        {
+            "type": "Innova Crysta",
+            "description": "Premium • 7 Seater",
+            "perKmRate": "₹20 / KM",
+            "price": 20
+        }
+    ]
+}
