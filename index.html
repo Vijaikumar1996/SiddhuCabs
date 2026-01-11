@@ -8,9 +8,12 @@
   <!-- Mobile Metas -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <!-- Site Metas -->
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
+  <meta name="description"
+    content="Siddhu Cabs provides reliable taxi and drop cab services with professional drivers, transparent pricing, and 24/7 availability across Tamil Nadu and South India.">
+
+  <meta name="keywords" content="Siddhu Cabs, taxi service, drop taxi, outstation cab, Tamil Nadu, South India taxi">
+
+  <meta name="author" content="vijaikumar" />
 
   <title></title>
 
@@ -37,7 +40,7 @@
   </script>
 </head>
 
-<body>
+<body class="sub_page">
 
   <div class="hero_area">
     <!-- header section strats -->
@@ -60,10 +63,10 @@
                   <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="index.html"> About</a>
+                  <a class="nav-link" href="about.html"> About</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="index.html">Contact Us</a>
+                  <a class="nav-link" href="contact.html">Contact Us</a>
                 </li>
 
                 <li onclick="callNow()" class="nav-item nav-call">
@@ -80,6 +83,7 @@
         </nav>
       </div>
     </header>
+      </div>
     <!-- end header section -->
     <!-- slider section -->
 
@@ -90,16 +94,45 @@
 
           <div class="col-lg-12 col-md-5 ">
             <div id="bookingMessage" style="display: none;" class="booking-message text-center">
-              Please submit the request in WhatsApp. <br> <br>
-              Siddhu Cabs will contact you within <b>10 minutes</b>.
+              <span class="confirm-message">
+
+              </span>
               <br> <br>
+
               <a class="nav-link" href="index.html">Back to Home <span class="sr-only">(current)</span></a>
             </div>
+            <div style="display: none;" class="hero-content mb-3 text-center">
+              <h1 class="hero-header"></h1>
+
+              <p class="hero-desc">
+              </p>
+
+              <a onclick="callNow();" href="javascript:void(0);" class="call-cta">
+                <i class="fa fa-phone"></i> Call Now: <span class="mobile-no"></span>
+              </a>
+            </div>
+
+
             <div class="slider_form prebookDetails">
               <h4 class="text-left">
                 Get A Taxi Now
               </h4>
               <form>
+                <div class="row mb-3">
+                  <div class="col-sm-3">
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" checked id="radio-oneway" name="triptype" class="custom-control-input">
+                      <label class="custom-control-label" for="radio-oneway">One Way</label>
+                    </div>
+
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="radio-roundtrip" name="triptype" class="custom-control-input">
+                      <label class="custom-control-label" for="radio-roundtrip">Round Trip</label>
+                    </div>
+
+                  </div>
+                </div>
+
                 <div class="row">
                   <div class="col-sm-3">
                     <input type="text" data-type="pickup" class="input-location" id="pickup"
@@ -110,7 +143,12 @@
                       placeholder="Drop location">
                   </div>
                   <div class="col-sm-2">
-                    <input type="text" id="approxdistance" placeholder="Approx. Distance">
+                    <div class="input-group">
+                      <input id="approxdistance" type="number" class="form-control" placeholder="Distance">
+                      <div class="input-group-append">
+                        <span class="input-group-text">KM</span>
+                      </div>
+                    </div>
                   </div>
                   <div class="col-sm-2">
                     <input type="tel" id="phoneNumber" placeholder="Phone Number" inputmode="numeric"
@@ -137,7 +175,7 @@
         <div class="col-lg-12 col-md-5 ">
           <div class="slider_form">
             <h4 class="text-left selected-vehicle-title">
-              Etios - Rs. 2000
+
             </h4>
             <form>
               <div class="row">
@@ -174,7 +212,7 @@
 
     </section>
     <!-- end slider section -->
-  </div>
+
 
   <!-- footer section -->
   <section class="container-fluid footer_section">
@@ -267,9 +305,9 @@
         }
         let approxDistance = calculateDistance();
         if (approxDistance) {
-          approxDistance = Math.round(approxDistance) + ' km';
+          approxDistance = Math.round(approxDistance) + 5; // adding 5 KM as buffer
         } else {
-          approxDistance = '';
+          approxDistance = 0;
         }
         $('#approxdistance').val(approxDistance);
 
@@ -309,30 +347,41 @@
     }
 
     function getTaxi() {
-      // if (!pickupDetails) {
-      //   alert('Please select valid pickup location.');
-      //   return;
-      // }
-
-      // if (!dropoffDetails) {
-      //   alert('Please select valid dropoff location.');
-      //   return;
-      // }
+      $('.booking-section').hide();
+      let pickup = $("#pickup").val();
+      let dropoff = $("#dropoff").val();
       let phoneNumber = $('#phoneNumber').val();
-      let approxDistance = $('#approxdistance').val() || "";
-      approxDistance = approxDistance.replace(' km', '');
-      approxDistance = parseFloat(approxDistance);
 
-
-
-      if (!pickupDetails.address || !dropoffDetails.address) {
-        alert('Please select valid pickup and dropoff locations.');
+      if (pickup.trim() === '') {
+        alert('Please enter pickup location.');
         return;
       }
-      if (!pickupDetails.lat || !dropoffDetails.lat) {
-        alert('Please select valid pickup and dropoff locations from suggestions.');
+      if (dropoff.trim() === '') {
+        alert('Please enter dropoff location.');
         return;
       }
+
+
+      let triptype = $('input[name="triptype"]:checked').attr('id') === 'radio-oneway' ? 'oneway' : 'roundtrip';
+
+      let approxDistance = $('#approxdistance').val() || 0;
+
+      if (triptype === 'oneway') {
+        approxDistance = approxDistance || 130;
+      }
+      else {
+        approxDistance = approxDistance != 0 ? approxDistance * 2 : 250;
+      }
+
+
+      // if (!pickupDetails.address || !dropoffDetails.address) {
+      //   alert('Please select valid pickup and dropoff locations.');
+      //   return;
+      // }
+      // if (!pickupDetails.lat || !dropoffDetails.lat) {
+      //   alert('Please select valid pickup and dropoff locations from suggestions.');
+      //   return;
+      // }
 
       if (!phoneNumber) {
         alert('Please enter your phone number.');
@@ -344,14 +393,24 @@
       }
 
       let vehicleBuilder = "";
+      vehicleBuilder += `
+  <div class="distance-summary alert alert-info text-center mb-3">
+    <strong>Total Distance:</strong> ${approxDistance}KM
+  </div>
+`;
 
       vehicleBuilder += '<div class="vehicle-grid">';
       $.each(globalConfig.vehicleTypes, function (index, vehicle) {
+        let perKmRate = triptype === 'oneway' ? vehicle.onewayPerKmRate : vehicle.roundtripPerKmRate;
+        let price = triptype === 'oneway' ? vehicle.onewayPrice : vehicle.roundtripPrice;
+
+        vehicle.perKmRate = perKmRate;
+        vehicle.price = (price * approxDistance) + 400; // adding base fare of 400
         vehicleBuilder += '<div class="vehicle-card">';
         vehicleBuilder += '<h4>' + vehicle.type + '</h4>';
         vehicleBuilder += '<p class="vehicle-desc">' + vehicle.description + '</p>';
         vehicleBuilder += '<p class="vehicle-desc">' + vehicle.perKmRate + '</p>';
-        vehicleBuilder += '<p class="vehicle-price">' + (vehicle.price * approxDistance) + '</p>';
+        vehicleBuilder += '<p class="vehicle-price">' + (vehicle.price) + '</p>';
         vehicleBuilder +=
           '<button onclick="selectVehicle(\'' +
           vehicle.type + '\',' +
@@ -385,7 +444,7 @@
       selectedVehicle = selectedVehicle[0];
       let vehicle = selectedVehicle;
       console.log('Selected vehicle:', vehicle);
-      $('.selected-vehicle-title').text(vehicle.type + ' - Rs. ' + (vehicle.price * approxDistance));
+      $('.selected-vehicle-title').text(vehicle.type + " - " + approxDistance + ' KM - ₹ ' + (vehicle.price));
       // Show booking section
       $('.booking-section').show();
       $('html, body').animate(
@@ -424,8 +483,11 @@
 
     function bookNow() {
       let name = $('#name').val();
+      let phoneNumber = $('#phoneNumber').val();
       let pickupDate = $('#pickup-date').val();
       let pickupTime = $('#pickup-time').val();
+      let pickup = pickupDetails && pickupDetails.address ? pickupDetails.address : $("#pickup").val();
+      let dropoff = dropoffDetails && dropoffDetails.address ? dropoffDetails.address : $("#dropoff").val();
 
       if (!name) {
         alert('Please enter your name.');
@@ -453,11 +515,14 @@
         `🚕 Taxi Booking Request
 
 Name: ${name}
+Phone Number: ${phoneNumber}
+Pickup Location: ${pickup}
+Dropoff Location: ${dropoff}
 Pickup Date: ${formattedDate}
 Pickup Time: ${pickupTime}
 
 Vehicle Type: ${selectedVehicle.type}
-Estimated Fare: ₹${selectedVehicle.price * parseFloat($('#approxdistance').val().replace(' km', ''))}
+Estimated Fare: ₹${selectedVehicle.price}
 
 Please confirm availability.`;
 
@@ -484,6 +549,9 @@ Please confirm availability.`;
 
 
   </script>
+  <a onclick="callNow();" class="call-float" aria-label="Call Us">
+    <i class="fa fa-phone"></i>
+  </a>
 
   <a onclick="redictToWhatsapp();" class="whatsapp-float" aria-label="Chat on WhatsApp">
     <i class="fa-brands fa-whatsapp"></i>

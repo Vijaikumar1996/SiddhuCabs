@@ -1,32 +1,45 @@
 {
     "appName": "Siddhu Cabs",
-    "mobileNo": "+919788404087",
+    "mobileNo": "+918148880787",
     "locationApi": "https://nominatim.openstreetmap.org/search",
     "rightsReserved": "Siddhu Cabs",
+    "hero-content": "Siddhu Cabs – Your Trusted Taxi Partner",
+    "hero-description": "Safe and reliable taxi services with experienced drivers, transparent pricing, and 24/7 availability. Comfortable local and outstation rides across Tamil Nadu and South India.",
+    "bookingMessage": "Please submit the request in WhatsApp. <br> <br> Siddhu Cabs will contact you within <b>10 minutes</b>",
+    "contactEmail": "siddhucabs@gmail.com",
+    "contactAddress": "25, Periyar Street, Chinna Sankaran Palayam, VOC Nagar, Vellore - 632001, Tamil Nadu",
     "vehicleTypes": [
         {
             "type": "Sedan",
             "description": "Comfort • Best for trips",
-            "perKmRate": "₹15 / KM",
-            "price": 15
+            "onewayPerKmRate": "₹14 / KM",
+            "roundtripPerKmRate": "₹13 / KM",
+            "onewayPrice": 14,
+            "roundtripPrice": 13
         },
         {
             "type": "Etios",
             "description": "Budget • AC",
-            "perKmRate": "₹14 / KM",
-            "price": 14
+            "onewayPerKmRate": "₹15 / KM",
+            "roundtripPerKmRate": "₹13 / KM",
+            "onewayPrice": 15,
+            "roundtripPrice": 13
         },
         {
             "type": "SUV",
             "description": "Spacious • Comfortable",
-            "perKmRate": "₹18 / KM",
-            "price": 18
+            "onewayPerKmRate": "₹19 / KM",
+            "roundtripPerKmRate": "₹18 / KM",
+            "onewayPrice": 19,
+            "roundtripPrice": 18
         },
         {
             "type": "Innova Crysta",
             "description": "Premium • 7 Seater",
-            "perKmRate": "₹20 / KM",
-            "price": 20
+            "onewayPerKmRate": "₹22 / KM",
+            "roundtripPerKmRate": "₹20 / KM",
+            "onewayPrice": 22,
+            "roundtripPrice": 20
         }
     ]
 }

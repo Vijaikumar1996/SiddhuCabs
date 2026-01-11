@@ -8,21 +8,25 @@
   <!-- Mobile Metas -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <!-- Site Metas -->
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
+  <meta name="description"
+    content="Learn about Siddhu Cabs, a trusted taxi and drop cab service offering safe, reliable, and affordable rides across Tamil Nadu and South India.">
 
-  <title>Urotaxi</title>
+  <meta name="keywords" content="Siddhu Cabs, about Siddhu Cabs, taxi service Tamil Nadu, drop taxi services">
 
+  <meta name="author" content="vijaikumar" />
+
+  <title></title>
 
   <!-- slider stylesheet -->
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
 
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
 
   <!-- fonts style -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
   <!-- Custom styles for this template -->
   <link href="css/style.css" rel="stylesheet" />
@@ -38,35 +42,34 @@
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
           <a class="navbar-brand" href="index.html">
-            <span>
-              Urotaxi
+            <span class="app-name">
+
             </span>
           </a>
           </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
-              <ul class="navbar-nav  ">
-                <li class="nav-item ">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
                   <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="about.html"> About</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="service.html"> Services </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="news.html"> News</a>
-                </li>
-                <li class="nav-item active">
                   <a class="nav-link" href="contact.html">Contact Us</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Login</a>
+
+                <li onclick="callNow()" class="nav-item nav-call">
+                  <a href="javascript:void(0)" class="nav-link call-link">
+                    <i class="fa fa-phone"></i>
+                    <span class="pl-2 mobile-no"></span>
+                  </a>
                 </li>
               </ul>
             </div>
@@ -79,115 +82,55 @@
 
   <!-- contact section -->
 
-  <section class="contact_section layout_padding">
-    <div class="container">
-      <div class="heading_container">
-        <h2>
-          Any Problems <br>
-          Any Questions
-        </h2>
-      </div>
-    </div>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-5  offset-md-1">
-          <div class="contact_form">
-            <h4>
-              Get In touch
-            </h4>
-            <form action="">
-              <input type="text" placeholder="Name">
-              <input type="text" placeholder="Phone Number">
-              <input type="text" placeholder="Message" class="message_input">
-              <button>Send</button>
-            </form>
-          </div>
-        </div>
-        <div class="col-md-6 px-0">
-          <div class="img-box">
-            <img src="images/contact-img.png" alt="">
-          </div>
-        </div>
-      </div>
+  <section class="contact-section">
+    <h1>Contact Us</h1>
+
+    <p class="contact-text">
+      Get in touch with <strong> <span class="app-name"></span></strong> for quick taxi bookings
+      and travel assistance. We are available 24/7.
+    </p>
+
+    <div class="contact-details">
+
+      <p>
+        <i class="fa fa-phone"></i>
+        <strong>Phone:</strong>
+        <a onclick="callNow()" href="javascript:void(0)"><span class="mobile-no"></span></a>
+      </p>
+
+      <p>
+        <i class="fa-brands fa-whatsapp"></i>
+        <strong>WhatsApp:</strong>
+        <a onclick="redictToWhatsapp()" href="javascript:void(0)" target="_blank">
+          Chat with us on WhatsApp
+        </a>
+      </p>
+
+      <p>
+        <i class="fa fa-envelope"></i>
+        <strong>Email:</strong>
+        <a onclick="redirectToEmail()" href="javascript:void(0)"><span class="contact-email"></span></a>
+      </p>
+
+      <p>
+        <i class="fa fa-location-dot"></i>
+        <strong>Service Area:</strong>
+        <span class="contact-address"></span>
+      </p>
+
     </div>
   </section>
+
   <!-- end contact section -->
 
-  <!-- info section -->
 
-  <section class="info_section layout_padding-top layout_padding2-bottom">
-    <div class="container">
-      <div class="box">
-        <div class="info_form">
-          <h4>
-            Subscribe Our Newsletter
-          </h4>
-          <form action="">
-            <input type="text" placeholder="Enter your email">
-            <div class="d-flex justify-content-end">
-              <button>
-
-              </button>
-            </div>
-          </form>
-        </div>
-        <div class="info_links">
-          <ul>
-            <li class=" ">
-              <a class="" href="index.html">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="">
-              <a class="" href="about.html"> About</a>
-            </li>
-            <li class="">
-              <a class="" href="service.html"> Services </a>
-            </li>
-            <li class="">
-              <a class="" href="news.html"> News</a>
-            </li>
-            <li class="">
-              <a class="" href="contact.html">Contact Us</a>
-            </li>
-            <li class="">
-              <a class="" href="#">Login</a>
-            </li>
-          </ul>
-        </div>
-        <div class="info_social">
-          <div>
-            <a href="">
-              <img src="images/fb.png" alt="">
-            </a>
-          </div>
-          <div>
-            <a href="">
-              <img src="images/twitter.png" alt="">
-            </a>
-          </div>
-          <div>
-            <a href="">
-              <img src="images/linkedin.png" alt="">
-            </a>
-          </div>
-          <div>
-            <a href="">
-              <img src="images/instagram.png" alt="">
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </section>
-
-  <!-- end info section -->
 
   <!-- footer section -->
   <section class="container-fluid footer_section">
     <div class="container">
       <p>
-        &copy; 2021 All Rights Reserved By
-        <a href="https://html.design/">Free Html Templates</a>
+        &copy; 2026 All Rights Reserved By
+        <a class="rights-reserved"></a>
       </p>
     </div>
   </section>
@@ -195,32 +138,99 @@
 
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script type="text/javascript" src="js/config.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
   </script>
 
 
   <!-- owl carousel script -->
   <script type="text/javascript">
-    $(".owl-carousel").owlCarousel({
-      loop: true,
-      margin: 20,
-      navText: [],
-      autoplay: true,
-      autoplayHoverPause: true,
-      responsive: {
-        0: {
-          items: 1
-        },
-        768: {
-          items: 2
-        },
-        1000: {
-          items: 2
-        }
-      }
+    var globalConfig = {};
+    $(document).ready(function () {
+      loadConfig()
+        .done(function (config) {
+          console.log('Config loaded', config);
+          globalConfig = config;
+          assignConfigValues(config);
+          // initialize app with config
+        })
+        .fail(function (jqXHR, textStatus, errorThrown) {
+          console.error('Failed to load config.json:', textStatus, errorThrown);
+        });
+
     });
+    function redirectToEmail() {
+      const emailAddress = globalConfig.contactEmail;
+      window.location.href = `mailto:${emailAddress}`;
+    }
+
+    function redictToWhatsapp() {
+      const whatsappNumber = globalConfig.mobileNo.replace("+", ""); // 👉 your number
+      let message = `Hello, I would like to inquire about your cab services.`;
+      message = encodeURIComponent(message);
+      const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
+      window.open(whatsappURL, '_blank');
+    }
+
+    function callNow() {
+      const phoneNumber = globalConfig.mobileNo.replace("+", "");// country code + number
+      window.location.href = 'tel:' + phoneNumber;
+    }
+
   </script>
   <!-- end owl carousel script -->
+
+
+  <a onclick="callNow();" class="call-float" aria-label="Call Us">
+    <i class="fa fa-phone"></i>
+  </a>
+
+  <a onclick="redictToWhatsapp();" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <style>
+    .contact-section {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .contact-section h1 {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .contact-text {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 25px;
+    }
+
+    .contact-details p {
+      font-size: 15px;
+      margin-bottom: 12px;
+    }
+
+    .contact-details i {
+      color: #25D366;
+      margin-right: 8px;
+    }
+
+    .contact-details a {
+      color: #000;
+      text-decoration: none;
+    }
+
+    .contact-details a:hover {
+      text-decoration: underline;
+    }
+
+    .footer_section {
+      position: fixed;
+      bottom: 0;
+    }
+  </style>
 
 </body>
 

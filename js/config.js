@@ -16,6 +16,11 @@
         $(".app-name").html(config.appName);
         $(".mobile-no").html(config.mobileNo);
         $(".rights-reserved").html(config.rightsReserved);//.attr("href", config.rightsReservedLink);
+        $(".hero-header").html(config["hero-content"]);
+        $(".hero-desc").html(config["hero-description"]);
+        $(".confirm-message").html(config["bookingMessage"]);
+        $(".contact-email").html(config["contactEmail"]);
+        $(".contact-address").html(config["contactAddress"]);
 
     }
 
