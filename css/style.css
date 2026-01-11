@@ -90,8 +90,8 @@ body {
 }
 
 .header_section .container-fluid {
-  padding-right: 25px;
-  padding-left: 25px;
+  padding-right: 10px;
+  padding-left: 10px;
   /* background: #f7c621; */
 }
 
@@ -1120,7 +1120,7 @@ a:focus {
 }
 
 .hero-content h1 {
-  font-size: 28px;
+  font-size: 24px;
   /* reduced */
   font-weight: 600;
   margin-bottom: 10px;
