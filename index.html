@@ -518,7 +518,7 @@
       let approxDistance = $('#approxdistance').val() || 0;
 
       if (triptype === 'oneway') {
-        approxDistance = approxDistance || 130;
+        approxDistance = approxDistance != 0 ? approxDistance : 130;
       }
       else {
         approxDistance = approxDistance != 0 ? approxDistance * 2 : 250;
