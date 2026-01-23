@@ -2,6 +2,7 @@
     "appName": "Siddhu Cabs",
     "mobileNo": "+918148880787",
     "locationApi": "https://nominatim.openstreetmap.org/search",
+    "distanceApi": "https://router.project-osrm.org/route/v1/driving/",
     "rightsReserved": "Siddhu Cabs",
     "hero-content": "Siddhu Cabs – Your Trusted Taxi Partner",
     "hero-description": "Safe and reliable taxi services with experienced drivers, transparent pricing, and 24/7 availability. Comfortable local and outstation rides across Tamil Nadu and South India.",

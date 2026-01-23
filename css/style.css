@@ -1368,3 +1368,27 @@ a:focus {
   margin: 8px 0 6px;
   color: #333;
 }
+
+.input-wrapper {
+  position: relative;
+}
+
+.input-location {
+  width: 100%;
+  padding-right: 36px; /* space for clear icon */
+}
+
+.clear-input {
+     position: absolute;
+    right: 12px;
+    top: 40%;
+    transform: translateY(-50%);
+    font-size: 25px;
+    color: #999;
+    cursor: pointer;
+    display: none;
+}
+
+.clear-input:hover {
+  color: #000;
+}

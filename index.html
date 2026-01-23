@@ -228,13 +228,21 @@
 
                   <div class="row">
                     <div class="col-sm-6">
-                      <input type="text" data-type="pickup" class="input-location" id="pickup"
-                        placeholder="Pick up location">
+                      <div class="input-wrapper">
+                        <input type="text" data-type="pickup" class="input-location" id="pickup"
+                          placeholder="Pick up location">
+                        <span class="clear-input" data-target="pickup">&times;</span>
+                      </div>
                     </div>
+
                     <div class="col-sm-6">
-                      <input type="text" data-type="dropoff" class="input-location" id="dropoff"
-                        placeholder="Drop location">
+                      <div class="input-wrapper">
+                        <input type="text" data-type="dropoff" class="input-location" id="dropoff"
+                          placeholder="Drop location">
+                        <span class="clear-input" data-target="dropoff">&times;</span>
+                      </div>
                     </div>
+
                     <div class="col-sm-4">
                       <div class="input-group">
                         <input id="approxdistance" type="number" class="form-control" placeholder="Distance">
@@ -454,42 +462,53 @@
             address: ui.item.label
           };
         }
-        let approxDistance = calculateDistance();
-        if (approxDistance) {
-          approxDistance = Math.round(approxDistance) + 5; // adding 5 KM as buffer
-        } else {
-          approxDistance = 0;
-        }
-        $('#approxdistance').val(approxDistance);
+        calculateDistance();
 
-        console.log('Distance', calculateDistance());
-        console.log('event', event);
-        console.log('ui', ui);
-        console.log('Selected:', ui.item.label);
-        console.log('Lat:', ui.item.lat, 'Lon:', ui.item.lon);
+
+        // console.log('Distance', calculateDistance());
+        // console.log('event', event);
+        // console.log('ui', ui);
+        // console.log('Selected:', ui.item.label);
+        // console.log('Lat:', ui.item.lat, 'Lon:', ui.item.lon);
       }
     });
 
     function calculateDistance() {
       if (pickupDetails.lat && dropoffDetails.lat) {
+
         let lat1 = parseFloat(pickupDetails.lat);
         let lon1 = parseFloat(pickupDetails.lon);
         let lat2 = parseFloat(dropoffDetails.lat);
         let lon2 = parseFloat(dropoffDetails.lon);
-        const R = 6371; // Earth radius in KM
-        const dLat = toRad(lat2 - lat1);
-        const dLon = toRad(lon2 - lon1);
 
-        const a =
-          Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-          Math.cos(toRad(lat1)) *
-          Math.cos(toRad(lat2)) *
-          Math.sin(dLon / 2) *
-          Math.sin(dLon / 2);
+        fetch(`${globalConfig.distanceApi}${lon1},${lat1};${lon2},${lat2}?overview=false`)
+          .then(res => res.json())
+          .then(data => {
+            const distanceKm = data.routes[0].distance / 1000;
+            //     if (approxDistance) {
+            //   approxDistance = Math.round(approxDistance) + 5; // adding 5 KM as buffer
+            // } else {
+            //   approxDistance = 0;
+            // }
+            $('#approxdistance').val(Math.round(distanceKm));
 
-        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+          });
 
-        return R * c;
+
+        // const R = 6371; // Earth radius in KM
+        // const dLat = toRad(lat2 - lat1);
+        // const dLon = toRad(lon2 - lon1);
+
+        // const a =
+        //   Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+        //   Math.cos(toRad(lat1)) *
+        //   Math.cos(toRad(lat2)) *
+        //   Math.sin(dLon / 2) *
+        //   Math.sin(dLon / 2);
+
+        // const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+
+        // return R * c;
       }
       return null;
     }
@@ -696,6 +715,29 @@ Please confirm availability.`;
       const phoneNumber = globalConfig.mobileNo.replace("+91", "");// country code + number
       window.location.href = 'tel:' + phoneNumber;
     }
+
+    document.querySelectorAll('.input-location').forEach(input => {
+      const clearBtn = input.parentElement.querySelector('.clear-input');
+      const targetId = clearBtn.getAttribute('data-target');
+
+      input.addEventListener('input', () => {
+        clearBtn.style.display = input.value ? 'block' : 'none';
+      });
+
+      clearBtn.addEventListener('click', () => {
+        input.value = '';
+        input.focus();
+        clearBtn.style.display = 'none';
+        if (targetId === 'pickup') {
+          pickupDetails = {};
+        }
+
+        if (targetId === 'dropoff') {
+          dropoffDetails = {};
+        }
+      });
+    });
+
 
 
   </script>
