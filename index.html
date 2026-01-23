@@ -83,135 +83,220 @@
         </nav>
       </div>
     </header>
-      </div>
-    <!-- end header section -->
-    <!-- slider section -->
+  </div>
+  <!-- end header section -->
+  <!-- slider section -->
 
-    <section class=" slider_section ">
-      <div class="container-fluid">
+  <section class=" slider_section ">
+    <div class="container-fluid">
 
-        <div class="row">
+      <div class="row">
 
-          <div class="col-lg-12 col-md-5 ">
-            <div id="bookingMessage" style="display: none;" class="booking-message text-center mb-3">
-              <span class="confirm-message">
+        <div class="col-lg-12 col-md-5 ">
+          <div id="bookingMessage" style="display: none;" class="booking-message text-center mb-3">
+            <span class="confirm-message">
 
-              </span>
-              <br> <br>
+            </span>
+            <br> <br>
 
-              <a class="nav-link" href="index.html">Back to Home <span class="sr-only">(current)</span></a>
-            </div>
-            <div style="display: none;" class="hero-content mb-3 text-center prebookDetails">
-              <h1 class="hero-header"></h1>
+            <a class="nav-link" href="index.html">Back to Home <span class="sr-only">(current)</span></a>
+          </div>
+          <div style="display: none;" class="hero-content mb-3 text-center prebookDetails">
+            <h1 class="hero-header"></h1>
 
-              <p class="hero-desc">
-              </p>
+            <p class="hero-desc">
+            </p>
 
-              <a onclick="callNow();" href="javascript:void(0);" class="call-cta">
-                <i class="fa fa-phone"></i> Call Now: <span class="mobile-no"></span>
-              </a>
-            </div>
+            <a onclick="callNow();" href="javascript:void(0);" class="call-cta">
+              <i class="fa fa-phone"></i> Call Now: <span class="mobile-no"></span>
+            </a>
+          </div>
 
+          <div class="row">
+            <div class="col-sm-6 mb-3">
 
-            <div class="slider_form prebookDetails">
-              <h4 class="text-left">
-                Get A Taxi Now
-              </h4>
-              <form>
-                <div class="row mb-3">
-                  <div class="col-sm-3">
-                    <div class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" checked id="radio-oneway" name="triptype" class="custom-control-input">
-                      <label class="custom-control-label" for="radio-oneway">One Way</label>
-                    </div>
+              <section class="popular-routes">
+                <div class="route-card">
+                  <div class="route-info">
+                    <h4>Vellore → Chennai Airport</h4>
+                    <p>One Way • AC Sedan</p>
+                  </div>
 
-                    <div class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" id="radio-roundtrip" name="triptype" class="custom-control-input">
-                      <label class="custom-control-label" for="radio-roundtrip">Round Trip</label>
-                    </div>
-
+                  <div class="route-actions text-center">
+                    <div class="route-price">₹2100</div>
+                    <button class="route-book-btn"
+                      onclick="invokeWhatsApp('Hello, I would like to inquire about Vellore to Chennai Airport.')">
+                      Book Now
+                    </button>
                   </div>
                 </div>
 
-                <div class="row">
-                  <div class="col-sm-3">
-                    <input type="text" data-type="pickup" class="input-location" id="pickup"
-                      placeholder="Pick up location">
+                <div class="route-card">
+                  <div class="route-info">
+                    <h4>Chennai Airport → Vellore</h4>
+                    <p>One Way • AC Sedan</p>
                   </div>
-                  <div class="col-sm-3">
-                    <input type="text" data-type="dropoff" class="input-location" id="dropoff"
-                      placeholder="Drop location">
-                  </div>
-                  <div class="col-sm-2">
-                    <div class="input-group">
-                      <input id="approxdistance" type="number" class="form-control" placeholder="Distance">
-                      <div class="input-group-append">
-                        <span class="input-group-text">KM</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-sm-2">
-                    <input type="tel" id="phoneNumber" placeholder="Phone Number" inputmode="numeric"
-                      pattern="[0-9]{10}" maxlength="10">
 
-                  </div>
-                  <div class="col-sm-2 btm_input">
-                    <button onclick="getTaxi()" type="button">
-                      Get Taxi
+                  <div class="route-actions text-center">
+                    <div class="route-price">₹2100</div>
+                    <button class="route-book-btn"
+                      onclick="invokeWhatsApp('Hello, I would like to inquire about Chennai Airport to Vellore.')">
+                      Book Now
                     </button>
                   </div>
-              </form>
+                </div>
+
+
+              </section>
+              <section class="vehicle-carousel mt-3">
+                <h5 class="mb-2">Available Car Types</h5>
+
+                <div class="owl-carousel car-type-carousel">
+
+                  <div class="car-card">
+                    <h6>Sedan</h6>
+                    <p>₹15 / KM</p>
+                    <button onclick="invokeWhatsApp('Hello, I would like to inquire about Sedan Car')"
+                      class="car-book-btn">
+                      Book Now
+                    </button>
+                  </div>
+
+                  <div class="car-card">
+                    <h6>SUV</h6>
+                    <p>₹18 / KM</p>
+                    <button onclick="invokeWhatsApp('Hello, I would like to inquire about SUV Car')"
+                      class="car-book-btn">
+                      Book Now
+                    </button>
+                  </div>
+
+                  <div class="car-card">
+                    <h6>Etios</h6>
+                    <p>₹14 / KM</p>
+                    <button onclick="invokeWhatsApp('Hello, I would like to inquire about Etios Car')"
+                      class="car-book-btn">
+                      Book Now
+                    </button>
+                  </div>
+
+                  <div class="car-card">
+                    <h6>Innova</h6>
+                    <p>₹20 / KM</p>
+                    <button onclick="invokeWhatsApp('Hello, I would like to inquire about Innova Car')"
+                      class="car-book-btn">
+                      Book Now
+                    </button>
+                  </div>
+
+                </div>
+              </section>
+
+
+            </div>
+            <div class="col-sm-6 mb-3">
+              <div class="slider_form prebookDetails">
+                <h4 class="text-left">
+                  Get A Taxi Now
+                </h4>
+                <form>
+                  <div class="row mb-3">
+                    <div class="col-sm-12">
+                      <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" checked id="radio-oneway" name="triptype" class="custom-control-input">
+                        <label class="custom-control-label" for="radio-oneway">One Way</label>
+                      </div>
+
+                      <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="radio-roundtrip" name="triptype" class="custom-control-input">
+                        <label class="custom-control-label" for="radio-roundtrip">Round Trip</label>
+                      </div>
+
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <input type="text" data-type="pickup" class="input-location" id="pickup"
+                        placeholder="Pick up location">
+                    </div>
+                    <div class="col-sm-6">
+                      <input type="text" data-type="dropoff" class="input-location" id="dropoff"
+                        placeholder="Drop location">
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="input-group">
+                        <input id="approxdistance" type="number" class="form-control" placeholder="Distance">
+                        <div class="input-group-append">
+                          <span class="input-group-text">KM</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <input type="tel" id="phoneNumber" placeholder="Phone Number" inputmode="numeric"
+                        pattern="[0-9]{10}" maxlength="10">
+
+                    </div>
+
+                    <div class="col-sm-4 btm_input">
+                      <button onclick="getTaxi()" type="button">
+                        Get Taxi
+                      </button>
+                    </div>
+                </form>
+              </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <section style="display: none;" class="vehicle-section prebookDetails">
-        <h3>Select Your Cab</h3>
-      </section>
+    <section style="display: none;" class="vehicle-section prebookDetails">
+      <h3>Select Your Cab</h3>
+    </section>
 
 
-      <div style="display:none" class="row booking-section prebookDetails">
-        <div class="col-lg-12 col-md-5 ">
-          <div class="slider_form">
-            <h4 class="text-left selected-vehicle-title">
+    <div style="display:none" class="row booking-section prebookDetails">
+      <div class="col-lg-12 col-md-5 ">
+        <div class="slider_form">
+          <h4 class="text-left selected-vehicle-title">
 
-            </h4>
-            <form>
-              <div class="row">
-                <div class="col-sm-3">
-                  <input type="date" id="pickup-date" placeholder="Pick up Date">
-                </div>
+          </h4>
+          <form>
+            <div class="row">
+              <div class="col-sm-3">
+                <input type="date" id="pickup-date" placeholder="Pick up Date">
+              </div>
 
-                <div class="col-sm-3">
-                  <select id="pickup-time">
-                    <option value="">Select Pickup Time</option>
-                  </select>
+              <div class="col-sm-3">
+                <select id="pickup-time">
+                  <option value="">Select Pickup Time</option>
+                </select>
 
-                </div>
-                <div class="col-sm-3">
-                  <input type="text" id="name" placeholder="Name">
-                </div>
+              </div>
+              <div class="col-sm-3">
+                <input type="text" id="name" placeholder="Name">
+              </div>
 
-                <div class="col-sm-3 btm_input">
-                  <button onclick="bookNow()" type="button">
-                    Book Now
-                  </button>
-                </div>
+              <div class="col-sm-3 btm_input">
+                <button onclick="bookNow()" type="button">
+                  Book Now
+                </button>
+              </div>
 
-                <!-- <div class="btm_input">
+              <!-- <div class="btm_input">
 
                   <button>Book Now</button>
                 </div> -->
-            </form>
-          </div>
+          </form>
         </div>
       </div>
+    </div>
 
 
 
-    </section>
-    <!-- end slider section -->
+  </section>
+  <!-- end slider section -->
 
 
   <!-- footer section -->
@@ -251,6 +336,7 @@
         .fail(function (jqXHR, textStatus, errorThrown) {
           console.error('Failed to load config.json:', textStatus, errorThrown);
         });
+      invokeCarCarousel();
       generateTimeSlots();
       const today = new Date().toISOString().split('T')[0];
 
@@ -258,6 +344,40 @@
         .attr('min', today)   // disable past dates
         .val(today);
     });
+
+    function invokeCarCarousel() {
+      // $('.car-type-carousel').owlCarousel({
+      //   loop: true,
+      //   margin: 10,
+      //   nav: true,
+      //   responsive: {
+      //     0: {
+      //       items: 1
+      //     },
+      //     600: {
+      //       items: 2
+      //     },
+      //     1000: {
+      //       items: 3
+      //     }
+      //   }
+      // });
+      $('.car-type-carousel').owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: true,
+        navText: [
+          '<span class="owl-nav-btn">‹</span>',
+          '<span class="owl-nav-btn">›</span>'
+        ],
+        dots: false,
+        responsive: {
+          0: { items: 2 },
+          576: { items: 3 },
+          768: { items: 4 }
+        }
+      });
+    }
 
     $('#phoneNumber').on('input', function () {
       this.value = this.value.replace(/\D/g, '');
@@ -509,7 +629,6 @@
         year: 'numeric'
       });
 
-      const whatsappNumber = globalConfig.mobileNo.replace("+", ""); // 👉 your number
 
       const message =
         `🚕 Taxi Booking Request
@@ -526,20 +645,20 @@ Estimated Fare: ₹${selectedVehicle.price}
 
 Please confirm availability.`;
 
-      const whatsappURL =
-        `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-
-      window.open(whatsappURL, '_blank');
+      invokeWhatsApp(message);
       $(".prebookDetails").hide();
       $("#bookingMessage").show();
     }
 
     function redictToWhatsapp() {
+      invokeWhatsApp("Hello, I would like to inquire about your cab services.");
+    }
+
+    function invokeWhatsApp(message) {
       const whatsappNumber = globalConfig.mobileNo.replace("+", ""); // 👉 your number
-      let message = `Hello, I would like to inquire about your cab services.`;
-      message = encodeURIComponent(message);
-      const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
+      const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
       window.open(whatsappURL, '_blank');
+
     }
 
     function callNow() {
