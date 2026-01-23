@@ -1159,3 +1159,179 @@ a:focus {
 .color-white {
   color: #ffffff;
 }
+
+.popular-routes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.route-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  border-left: 5px solid #ffd633;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.route-info h4 {
+  font-size: 15px;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+.route-info p {
+  font-size: 12px;
+  color: #666;
+  margin: 0;
+}
+
+.route-actions {
+  text-align: right;
+}
+
+.route-price {
+  font-weight: 700;
+  font-size: 15px;
+  color: #000;
+  margin-bottom: 6px;
+}
+
+/* .route-book-btn {
+  background: #ffd633;
+  border: none;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 18px;
+  cursor: pointer;
+  white-space: nowrap;
+  color: #fff;
+}
+
+.route-book-btn:hover {
+  background: #ffd633;
+} */
+
+.offer-card {
+  position: relative;
+}
+
+.offer-badge {
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  background: #e63946;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.vehicle-carousel h5 {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.car-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 14px 12px;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  border: 1px solid #eee;
+}
+
+.car-card h6 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.car-card p {
+  font-size: 13px;
+  color: #f7c600;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.car-book-btn ,.route-book-btn  {
+  border: 2px solid #ffd633;
+  background : #fff; 
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 18px;
+  cursor: pointer;
+  white-space: nowrap;
+  color: #333;
+}
+
+.car-book-btn:hover, .route-book-btn:hover {
+  background: #f7c600;
+  color: #fff;
+
+}
+
+/* Make carousel relative so arrows position correctly */
+.car-type-carousel {
+  position: relative;
+}
+
+/* Nav container */
+.car-type-carousel .owl-nav {
+  position: absolute;
+  top: 45%;
+  width: 100%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none; /* allow clicks only on buttons */
+}
+
+/* Individual arrow buttons */
+.car-type-carousel .owl-nav button {
+  pointer-events: all;
+  background: rgba(255, 255, 255, 0.9) !important;
+  border: 2px solid #f7c600 !important;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Arrow icon */
+.owl-nav-btn {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+  line-height: 1;
+}
+
+/* Left arrow */
+.car-type-carousel .owl-nav .owl-prev {
+  margin-left: -18px; /* half outside */
+}
+
+/* Right arrow */
+.car-type-carousel .owl-nav .owl-next {
+  margin-right: -18px;
+}
+
+/* Hover effect */
+.car-type-carousel .owl-nav button:hover {
+  background: #f7c600 !important;
+}
+
+
+
+
+
