@@ -73,6 +73,10 @@
     display: inline-block !important
   }
 
+  .hero-contact-name {
+    display: block !important;
+  }
+
   .slider_section {
     padding: 20px 0 75px 0 !important;
   }

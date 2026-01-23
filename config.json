@@ -8,6 +8,7 @@
     "bookingMessage": "Please submit the request in WhatsApp. <br> <br> Siddhu Cabs will contact you within <b>10 minutes</b>",
     "contactEmail": "siddhucabs@gmail.com",
     "contactAddress": "25, Periyar Street, Chinna Sankaran Palayam, VOC Nagar, Vellore - 632001, Tamil Nadu",
+    "contactPerson": "Mr. Balaji",
     "vehicleTypes": [
         {
             "type": "Sedan",
@@ -20,9 +21,9 @@
         {
             "type": "Etios",
             "description": "Budget • AC",
-            "onewayPerKmRate": "₹15 / KM",
+            "onewayPerKmRate": "₹14 / KM",
             "roundtripPerKmRate": "₹13 / KM",
-            "onewayPrice": 15,
+            "onewayPrice": 14,
             "roundtripPrice": 13
         },
         {
@@ -36,10 +37,10 @@
         {
             "type": "Innova Crysta",
             "description": "Premium • 7 Seater",
-            "onewayPerKmRate": "₹22 / KM",
-            "roundtripPerKmRate": "₹20 / KM",
-            "onewayPrice": 22,
-            "roundtripPrice": 20
+            "onewayPerKmRate": "₹19 / KM",
+            "roundtripPerKmRate": "₹18 / KM",
+            "onewayPrice": 19,
+            "roundtripPrice": 18
         }
     ]
 }

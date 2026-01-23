@@ -114,6 +114,10 @@
               <span>✔ GPS Enabled Cars</span>
             </div>
 
+            <div style="display:none" class="hero-contact-name">
+              Talk to <strong class="contact-person"></strong>
+            </div>
+
             <a style="display: none;" onclick="callNow();" href="javascript:void(0);" class="call-cta">
               <i class="fa fa-phone"></i> Call Now: <span class="mobile-no"></span>
             </a>
@@ -160,7 +164,7 @@
 
                 <div class="owl-carousel car-type-carousel">
 
-                  <div class="car-card">
+                  <!-- <div class="car-card">
                     <h6>Sedan</h6>
                     <p>₹15 / KM</p>
                     <button onclick="invokeWhatsApp('Hello, I would like to inquire about Sedan Car')"
@@ -194,7 +198,7 @@
                       class="car-book-btn">
                       Book Now
                     </button>
-                  </div>
+                  </div> -->
 
                 </div>
               </section>
@@ -338,12 +342,15 @@
           console.log('Config loaded', config);
           globalConfig = config;
           assignConfigValues(config);
+          loadCarCarouselDetails();
+          invokeCarCarousel();
           // initialize app with config
         })
         .fail(function (jqXHR, textStatus, errorThrown) {
           console.error('Failed to load config.json:', textStatus, errorThrown);
         });
-      invokeCarCarousel();
+
+
       generateTimeSlots();
       const today = new Date().toISOString().split('T')[0];
 
@@ -351,6 +358,23 @@
         .attr('min', today)   // disable past dates
         .val(today);
     });
+
+    function loadCarCarouselDetails() {
+      let carousel = $('.car-type-carousel');
+      carousel.empty();
+      $.each(globalConfig.vehicleTypes, function (index, vehicle) {
+        let carCard = `
+      <div class="car-card">
+        <h6>${vehicle.type}</h6>
+        <p>${vehicle.onewayPerKmRate}</p>
+        <button onclick="invokeWhatsApp('Hello, I would like to inquire about ${vehicle.type} Car')" class="car-book-btn">
+          Book Now
+        </button>
+      </div>
+    `;
+        carousel.append(carCard);
+      });
+    }
 
     function invokeCarCarousel() {
       // $('.car-type-carousel').owlCarousel({
@@ -669,7 +693,7 @@ Please confirm availability.`;
     }
 
     function callNow() {
-      const phoneNumber = globalConfig.mobileNo.replace("+", "");// country code + number
+      const phoneNumber = globalConfig.mobileNo.replace("+91", "");// country code + number
       window.location.href = 'tel:' + phoneNumber;
     }
 

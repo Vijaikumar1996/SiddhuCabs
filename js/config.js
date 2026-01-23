@@ -21,6 +21,7 @@
         $(".confirm-message").html(config["bookingMessage"]);
         $(".contact-email").html(config["contactEmail"]);
         $(".contact-address").html(config["contactAddress"]);
+        $(".contact-person").html(config["contactPerson"]);
 
     }
 
