@@ -950,6 +950,7 @@ a:focus {
   justify-content: center;
   position: fixed;
   bottom: 0;
+  z-index: 1;
 }
 
 .footer_section p {
@@ -1196,7 +1197,7 @@ a:focus {
 
 .route-price {
   font-weight: 700;
-  font-size: 15px;
+  font-size: 17px;
   color: #000;
   margin-bottom: 6px;
 }
