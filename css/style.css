@@ -186,7 +186,7 @@ a:focus {
   align-items: center;
   z-index: 2;
   color: #3b3a3a;
-  padding: 45px 0 75px 0;
+  padding: 25px 0 75px 0;
 }
 
 .slider_section .row {
@@ -1116,9 +1116,9 @@ a:focus {
   color: #fff;
 }
 
-.hero-content {
+/* .hero-content {
   max-width: 560px;
-}
+} */
 
 .hero-content h1 {
   font-size: 24px;
@@ -1332,7 +1332,33 @@ a:focus {
   background: #f7c600 !important;
 }
 
+.hero-trust {
+  margin: 12px 0 18px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
 
+.hero-trust span {
+  background: #fff;
+  padding: 6px 12px;
+  border-radius: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
 
+.hero-trust span:hover {
+  transform: translateY(-2px);
+  transition: 0.2s ease;
+}
+.hero-trust span.highlight {
+  border: 2px solid #f7c600; /* Taxi yellow */
+  color: #000;
+  background: #fff;
+  box-shadow: 0 3px 10px rgba(247, 198, 0, 0.25);
+}
 
 

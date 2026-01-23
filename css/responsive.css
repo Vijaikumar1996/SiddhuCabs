@@ -50,9 +50,10 @@
 }
 
 @media (max-width: 768px) {
-  .navbar-toggler{
-        padding: 0.5rem 0rem !important;
+  .navbar-toggler {
+    padding: 0.5rem 0rem !important;
   }
+
   .header_section {
     background-color: #f7c621 !important;
   }
@@ -62,6 +63,15 @@
   }
 
   .hero-content {
+    max-width: 560px !important
+  }
+
+  .hero-trust span {
+    font-size: 13px;
+    padding: 5px 10px;
+  }
+
+  .hero-content .call-cta {
     display: block !important;
   }
 
