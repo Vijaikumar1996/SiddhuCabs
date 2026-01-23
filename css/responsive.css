@@ -62,9 +62,7 @@
     background-image: none !important;
   }
 
-  .hero-content {
-    max-width: 560px !important
-  }
+  
 
   .hero-trust span {
     font-size: 13px;
@@ -72,7 +70,7 @@
   }
 
   .hero-content .call-cta {
-    display: block !important;
+    display: inline-block !important
   }
 
   .slider_section {
